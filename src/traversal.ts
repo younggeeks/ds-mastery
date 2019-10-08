@@ -1,6 +1,6 @@
-import { Queue } from "./queue";
-import { TraversalCallback } from "./graph";
-import { Stack } from "./stack";
+import { Queue } from "./structures";
+import { TraversalCallback } from "./structures";
+import { Stack } from "./structures";
 
 export function bfs<T>(node: T, callback: TraversalCallback) {
   let q = new Queue<T>();

@@ -1,4 +1,2 @@
-export * from './graph';
-export * from './queue';
-export * from './stack';
-export * from './transversal';
+export * from './structures';
+export * from './traversal';
