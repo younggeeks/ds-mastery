@@ -4,21 +4,21 @@ export interface LinkedListNode<T> {
 }
 
 export class LinkedList<T> {
-  head?: LinkedListNode<T>;
+  private linkedList?: LinkedListNode<T>;
 
   constructor() {};
 
   add(value: T) {
     const node: LinkedListNode<T> = {
       value,
-      tail: this.head ? { ...this.head } : undefined
+      tail: this.linkedList ? { ...this.linkedList } : undefined
     }
 
-    this.head = node;
+    this.linkedList = node;
   }
 
   remove(value: T) {
-    let currentNode = this.head;
+    let currentNode = this.linkedList;
     let previousNode: LinkedListNode<T> | undefined;
 
     let isDone = false;
@@ -43,7 +43,7 @@ export class LinkedList<T> {
           if (previousNode) {
             previousNode.tail = currentNode.tail;
           } else {
-            this.head = currentNode.tail;
+            this.linkedList = currentNode.tail;
           }
           
           isDone = true;
@@ -56,11 +56,11 @@ export class LinkedList<T> {
   }
 
   toArray(): T[] {
-    if (!this.head) {
+    if (!this.linkedList) {
       return [];
     }
 
-    return this.convertLinkedListToArray(this.head);
+    return this.convertLinkedListToArray(this.linkedList);
   }
 
   private convertLinkedListToArray(node: LinkedListNode<T>) {
