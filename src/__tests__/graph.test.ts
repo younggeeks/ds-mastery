@@ -1,4 +1,4 @@
-import {Graph} from "../index";
+import {Graph} from "../structures";
 
 test('Graph sample test', ()=>{
     const grap = new Graph<number>();
@@ -7,7 +7,6 @@ test('Graph sample test', ()=>{
     grap.addVertice(20);
     grap.addEdge(54,20)
 
-    expect(grap.list.size).toBe(2)
-    // @ts-ignore
-    expect(grap.list.get(54).length).toBe(1)
+    expect(grap.list.size).toBe(2);
+    expect(grap.list.get(54)!.length).toBe(1);
 });
