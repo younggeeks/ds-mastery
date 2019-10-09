@@ -13,6 +13,10 @@ export class Stack<T> {
     return this.nodes.length <= 0;
   }
 
+  size() {
+    return this.nodes.length;
+  }
+
   peek() {
     return this.nodes[this.nodes.length];
   }
